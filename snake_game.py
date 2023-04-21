@@ -101,7 +101,6 @@ def main():
                     game_board.change_snake_dir(DOWN)
 
         current_time = pygame.time.get_ticks()
-        print(current_time, last_time)
         if current_time - last_time > (1000/FPS): 
             # Update the game
             continueGame = game_board.step_snake()
