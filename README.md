@@ -1,5 +1,5 @@
 # snek
-A game of snake written in pygame to play around with
+A game of snake written in pygame
 
 To install requirements run:
 
