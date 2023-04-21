@@ -3,30 +3,16 @@ from snake_board import GameBoard, SnakeSquare, UP, DOWN, LEFT, RIGHT
 
 # Import pygame.locals for easier access to key coordinates
 
-from pygame.locals import (
+from pygame.locals import (K_UP, K_DOWN, K_LEFT, K_RIGHT, K_ESCAPE, KEYDOWN, QUIT)
 
-    K_UP,
-
-    K_DOWN,
-
-    K_LEFT,
-
-    K_RIGHT,
-
-    K_ESCAPE,
-
-    KEYDOWN,
-
-    QUIT,
-
-)
-
+# Define some colors
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 RED = (200, 0, 0)
 BLUE = (0, 0, 200)
 GREEN = (0, 200, 0)
 GREY = (100,100,100)
+
 
 def drawGrid(width, height, blockSize, screen, grid):
  
@@ -49,18 +35,16 @@ def drawGrid(width, height, blockSize, screen, grid):
 
             rect = pygame.Rect(x, y, blockSize, blockSize)
             pygame.draw.rect(screen, square_color, rect, 0)
-
             pygame.draw.rect(screen, BLACK, rect, 1)
 
 
 def main():
 
     # Initialize pygame
-
     pygame.init()
     pygame.display.set_caption('snek')
-    # Define constants for the screen width and height
 
+    # Define constants for the screen width and height
     SCREEN_WIDTH = 800
     SCREEN_HEIGHT = 600
     BLOCK_SIZE = 20
@@ -70,8 +54,8 @@ def main():
     BOARD_HEIGHT = int(SCREEN_HEIGHT/BLOCK_SIZE)
 
     game_board = GameBoard(BOARD_WIDTH, BOARD_HEIGHT)
-
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    
     # draw first screen
     board = game_board.get_board()
     drawGrid(int(SCREEN_WIDTH), int(SCREEN_HEIGHT), BLOCK_SIZE, screen, board)
@@ -117,8 +101,7 @@ def main():
             pygame.display.flip()
             last_time = current_time
 
-    # Exit Loop Due to 
-
+    # Exit Loop due to the exit button being pressed 
     pygame.quit()
 
 

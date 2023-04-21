@@ -1,4 +1,3 @@
-
 import numpy as np
 import random
 from enum import Enum, IntEnum
@@ -29,8 +28,8 @@ class GameBoard():
         # initialize snake direction
         self.snake_direction = UP
 
-        # intialize 
-        self.apple = (None,None)
+        # intialize apple
+        self.apple = (None, None)
         self.get_new_apple()
 
 
